@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,9 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
 </head>
 <body>
-    <h1>this is result page</h1>
+     <!-- This is for nav bar-->
+     <div class="page-wrapper">
+        <div class="nav-wrapper">
+            <div class="grad-bar"></div>
+            <nav class="navbar">
+                <img src="{% static 'ima/logo5.png' %}" alt="Company Logo">
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav no-search">
+                    <li class="nav-item"><a href="{%url 'index' %}">Home</a></li>
+                    <li class="nav-item"><a href="{% url 'search'%}">Search</a></li>
+                    <li class="nav-item"><a href="{% url 'app' %}">Predict</a></li>
+                    <li class="nav-item"><a href="{% url 'faq' %}">Faq</a></li>
+                    <li class="nav-item"><a href="{% url 'forms' %}">Forms</a></li>
+                    
+                    
+
+                </ul>
+            </nav>
+        </div>
+
+        <!-- This is for nav bar-->
+    <h3>approximate rent</h3>
+
     {{price_prediction}}
     
 </body>
