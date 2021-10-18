@@ -1,0 +1,1114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Title Here</title>
+  {% load static %}
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+  <style>
+    
+  /* HEADINGS */
+  
+  h1, p {
+    color:black;
+    text-align: center;
+    line-height: 1.4;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+  }
+  
+  h2 {
+    color: #000;
+    font-size: 1.3rem;
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+  
+  /* BASIC SETUP */
+  
+  .page-wrapper {
+    width: 100%;
+    height: auto;
+  }
+  
+  .nav-wrapper {
+    width: 100%;
+    position: -webkit-sticky; /* Safari */
+    position:relative;
+    top: 0;
+    background-color: #fff;
+  }
+  
+  .grad-bar {
+      top:0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+        -webkit-animation: gradbar 15s ease infinite;
+      -moz-animation: gradbar 15s ease infinite;
+      animation: gradbar 15s ease infinite;
+  }
+  
+  /* NAVIGATION */
+  
+  .navbar {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    height: 100px;
+    overflow: hidden;
+  }
+  
+  .navbar img {
+    height: 100px;
+    width: 100px;
+    width: auto;
+    justify-self: start;
+    margin-left: 20px;
+  }
+  
+  .navbar ul {
+      margin-right:50px;
+
+    margin-top:70px;
+    list-style:none;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    justify-self: end;
+    
+  }
+  .nav-item{
+    padding-left: 20px;
+  }
+  
+  .nav-item a {
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 0.3s ease-out;
+  }
+  
+  .nav-item a:hover {
+    color: #3498db;
+  }
+  
+  
+  input {
+    border: 0;
+    border-left: 1px solid #ccc;
+    border-radius: 0; /* FOR SAFARI */
+    outline: 0;
+    padding: 5px;
+  }
+  
+  /* MOBILE MENU & ANIMATION */
+  
+  .menu-toggle .bar{
+    width: 25px;
+    height: 3px;
+    background-color: #3f3f3f;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .menu-toggle {
+    justify-self: end;
+    margin-right: 25px;
+    display: none;
+  }
+  
+  .menu-toggle:hover{
+    cursor: pointer;
+  }
+  
+  #mobile-menu.is-active .bar:nth-child(2){
+    opacity: 0;
+  }
+  
+  #mobile-menu.is-active .bar:nth-child(1){
+    -webkit-transform: translateY(8px) rotate(45deg);
+    -ms-transform: translateY(8px) rotate(45deg);
+    -o-transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  #mobile-menu.is-active .bar:nth-child(3){
+    -webkit-transform: translateY(-8px) rotate(-45deg);
+    -ms-transform: translateY(-8px) rotate(-45deg);
+    -o-transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  /* KEYFRAME ANIMATIONS */
+  
+  @-webkit-keyframes gradbar {
+      0% {
+          background-position: 0% 50%
+      }
+      50% {
+          background-position: 100% 50%
+      }
+      100% {
+          background-position: 0% 50%
+      }
+  }
+  
+  @-moz-keyframes gradbar {
+      0% {
+          background-position: 0% 50%
+      }
+      50% {
+          background-position: 100% 50%
+      }
+      100% {
+          background-position: 0% 50%
+      }
+  }
+  
+  @keyframes gradbar {
+      0% {
+          background-position: 0% 50%
+      }
+      50% {
+          background-position: 100% 50%
+      }
+      100% {
+          background-position: 0% 50%
+      }
+  }
+  
+  /* Media Queries */
+  
+    /* Mobile Devices - Phones/Tablets */
+  
+  @media only screen and (max-width: 720px) { 
+    .features {
+      flex-direction: column;
+      padding: 50px;
+    }
+    
+    /* MOBILE HEADINGS */
+    
+    h1 {
+      font-size: 1.9rem;
+    }
+    
+    h2 {
+      font-size: 1rem;
+    }
+    
+    p {
+      font-size: 0.8rem;
+    }
+    
+    /* MOBILE NAVIGATION */
+       
+    .navbar ul {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      justify-content: start;
+      top: 55px;
+      background-color: #fff;
+      width: 100%;
+      height: calc(100vh - 55px);
+      transform: translate(-101%);
+      text-align: center;
+      overflow: hidden;
+    }
+    
+    .navbar li {
+      padding: 15px;
+    }
+    
+    .navbar li:first-child {
+      margin-top: 50px;
+    }
+    
+    .navbar li a {
+      font-size: 1rem;
+    }
+     
+    .menu-toggle, .bar {
+      display: block;
+      cursor: pointer;
+    }
+    
+    .mobile-nav {
+    transform: translate(0%)!important;
+  }
+    
+    
+    
+  }
+
+
+  /* THis if for search bor animation */
+body{
+  background-color: white;
+}
+#image{
+    background: url('/static/ima/image3.jpg') no-repeat;
+    height: 400px;
+    margin-top: 200px;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 90px;
+}
+
+
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+      margin-top: -90px;
+    margin-left: -60px;
+    padding: 3rem;
+    width: 400px;
+  }
+  
+  input[type="search"] {
+    -webkit-appearance: none !important;
+    background-clip: padding-box;
+    background-color: white;
+    vertical-align: middle;
+    border-radius: 0.25rem;
+    border: 1px solid #e0e0e5;
+    font-size: 1rem;
+    width: 100%;
+    line-height: 2;
+    padding: 0.375rem 1.25rem;
+    -webkit-transition: border-color 0.2s;
+    -moz-transition: border-color 0.2s;
+    transition: border-color 0.2s;
+  }
+  
+  input[type="search"]:focus {
+    transition: all 0.5s;
+    box-shadow: 0 0 40px #f9d442b9;
+    border-color: #f9d342;
+    outline: none;
+  }
+  
+  form.search-form {
+    display: flex;
+    justify-content: center;
+  }
+  
+  label {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    align-self: center;
+    margin-bottom: 0;
+  }
+  
+  input.search-field {
+    margin-bottom: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    align-self: center;
+    height: 51px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  input.search-submit {
+    height: 51px;
+    margin: 0;
+    padding: 1rem 1.3rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    font-family: "Font Awesome 5 Free";
+    font-size: 1rem;
+  }
+  
+  .screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+  
+  .button {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 0.8rem;
+    line-height: 1.15;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    background: #f9d342;
+    color: #292826;
+    border: 1px solid transparent;
+    vertical-align: middle;
+    text-shadow: none;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  
+  .button:hover,
+  .button:active,
+  .button:focus {
+    cursor: pointer;
+    background: #d4b743;
+    color: #292826;
+    outline: 0;
+  }
+  
+/*   */
+
+.container {
+    margin-top: 10px;
+    margin-left:200px;
+    display: flex;
+    flex-wrap:nowrap;
+    font-family: 'Open Sans', sans-serif;
+}
+.card {
+    
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px #ccc;
+    width: 350px;
+    text-align: center;
+    margin-left: 2em;
+    margin-top: 2em;
+}
+.card a {
+    text-decoration: none;
+    color: black;
+}
+.card .card-top {
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 1.5em;
+    min-height: 200px;
+    padding-bottom: 0.5em;
+}
+.card .card-top span {
+    color: #fafafa;
+    font-size: 0.6em;
+    padding-top: 1em;
+}
+.card .background-purple {
+    background: #5f23ae;
+    background: linear-gradient(45deg, rgba(95, 35, 174, 1) 0%, rgba(132, 64, 190, 1) 50%, rgba(200, 109, 215, 1) 100%);
+}
+.card .background-red {
+    background: #af1310;
+    background: linear-gradient(45deg, rgba(175, 19, 16, 1) 0%, rgba(222, 58, 55, 1) 50%, rgba(255, 68, 65, 1) 100%);
+}
+.card .background-teal {
+    background: #1b8b77;
+    background: linear-gradient(45deg, rgba(27, 139, 119, 1) 0%, rgba(56, 189, 166, 1) 50%, rgba(96, 230, 192, 1) 100%);
+}
+.card h3 {
+    font-size: 28px;
+    font-weight: 400;
+    margin: 0;
+    padding: 2rem 0 0;
+}
+.card i {
+    font-size: 56px;
+    padding: 1.25rem 0 0;
+}
+.card .card-tagline {
+    font-size: 20px;
+    margin: 0;
+    padding: 1.25rem 0 0;
+}
+.card .card-subtag {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 12px;
+}
+.card span {
+    display: block;
+    width: 100%;
+}
+.card .option-list {
+    background-color: #f4f4f4;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    padding: 0em 0;
+    margin: 0;
+    width: 100%;
+}
+.card .option-list .option {
+    border: solid 2px rgba(246, 246, 249, 0);
+    padding: 1em;
+    padding-bottom: 0.5em;
+    position: relative;
+    width: calc(1/3 * 100%);
+}
+.card .option-list .highlight-blue {
+    border: 2px solid #3094f7;
+    box-shadow: 0px 0px 10px #3094f7;
+    margin: 0;
+}
+.card .option-list .highlight-blue span {
+    color: #3094f7;
+}
+.card .option-list .highlight-blue .savings {
+    color: #7abafa;
+}
+.card .option-list .highlight-blue .pill {
+    background-color: #3094f7;
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px #3094f7;
+    color: #fff;
+    display: block;
+    line-height: 1.5em;
+    font-size: 0.75em;
+    position: absolute;
+    top: -10px;
+    margin: 0 auto;
+    width: 75%;
+}
+.card .option-list .highlight-red {
+    border: 2px solid #f73030;
+    box-shadow: 0px 0px 10px #f73030;
+    margin: 0;
+}
+.card .option-list .highlight-red span {
+    color: #f73030;
+}
+.card .option-list .highlight-red .savings {
+    color: #fa7a7a;
+}
+.card .option-list .highlight-red .pill {
+    background-color: #f73030;
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px #f73030;
+    color: #fff;
+    display: block;
+    line-height: 1.5em;
+    font-size: 0.75em;
+    position: absolute;
+    top: -10px;
+    margin: 0 auto;
+    width: 75%;
+}
+.card .option-list .highlight-green {
+    border: 2px solid #60e6c0;
+    box-shadow: 0px 0px 10px #60e6c0;
+    margin: 0;
+}
+.card .option-list .highlight-green span {
+    color: #60e6c0;
+}
+.card .option-list .highlight-green .savings {
+    color: #a2f0da;
+}
+.card .option-list .highlight-green .pill {
+    background-color: #60e6c0;
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px #60e6c0;
+    color: #fff;
+    display: block;
+    line-height: 1.5em;
+    font-size: 0.75em;
+    position: absolute;
+    top: -10px;
+    margin: 0 auto;
+    width: 75%;
+}
+.card .option-list .popular {
+    display: none;
+}
+.card .option-list .number {
+    font-size: 2em;
+}
+.card .option-list .time-frame {
+    font-size: 0.75em;
+}
+.card .option-list .cost {
+    font-size: 0.75em;
+    font-weight: 800;
+}
+.card .option-list .savings {
+    font-size: 0.75em;
+    padding: 0.5em 0 0;
+}
+.card .cta {
+    padding: 1em 0;
+}
+.card .cta .btn {
+    border-radius: 25px;
+    box-shadow: 0px 0px 25px #c6c6c6;
+    color: #fff;
+    display: block;
+    margin: 0 auto;
+    padding: 10px 0;
+    text-decoration: none;
+    width: 75%;
+}
+.card .cta .btn-purple {
+    background: linear-gradient(90deg, #5f23ae 0%, #8440be 31%, #c86dd7 100%);
+    background-size: 150% auto;
+    background-position: 31% 0;
+    transition: background-position 0.4s;
+}
+.card .cta .btn-purple:hover {
+    background-position: 100% 0;
+}
+.card .cta .btn-red {
+    background: linear-gradient(90deg, #af1310 0%, #de3a37 50%, #ff4441 100%);
+    background-size: 150% auto;
+    background-position: 31% 0;
+    transition: background-position 0.4s;
+}
+.card .cta .btn-red:hover {
+    background-position: 100% 0;
+}
+.card .cta .btn-teal {
+    background: linear-gradient(90deg, #1b8b77 0%, #38bda6 50%, #60e6c0 100%);
+    background-size: 150% auto;
+    background-position: 31% 0;
+    transition: background-position 0.4s;
+}
+.card .cta .btn-teal:hover {
+    background-position: 100% 0;
+}
+.card .cta .decline {
+    color: #c9c9c9;
+    font-weight: 700;
+    display: block;
+    padding: 1em 0 0;
+    margin: auto;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    width: 40%;
+}
+.card .cta .decline:hover {
+    color: #999;
+}
+
+.carousel-container {
+    width: 290px;
+    height: 200px;
+    position:absolute;
+    margin-left: 10px;
+    
+  }
+  
+  .navigation .prev {
+    position: absolute;
+    z-index: 10;
+    font-size: 25px;
+    top: 40%;
+    left: 10px;
+    font-weight: 700;
+  }
+  .navigation .next {
+    right: 10px;
+    position: absolute;
+    font-size: 25px;
+    z-index: 10;
+    top: 40%;
+  }
+  .navigation .nav-btn {
+    background: rgba(255, 255, 255, 0.55);
+    cursor: pointer;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+  }
+  .navigation .nav-btn:hover {
+    background: white;
+  }
+  
+  .carousel {
+    margin-top: 20px;
+    transition: all 0.3s ease;
+   
+  }
+  .carousel img {
+    width: 100%;
+    height: 190px;
+    transition: all 0.3s ease;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+  }
+  
+  .caption {
+    position: absolute;
+    top:150px;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0.3);
+    height: 35px;
+  }
+  
+  .item {
+    position: absolute;
+    display: none;
+  }
+  
+  .main {
+    display: block;
+  }
+
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+
+.foo {
+  
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+  background: #3586ff;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  color: #fff;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+
+  background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+  </style>
+</head>
+<!-- This is for nav bar-->
+<div class="page-wrapper">
+  <div class="nav-wrapper">
+    <div class="grad-bar"></div>
+    <nav class="navbar">
+      <img src="{% static 'ima/logo5.png' %}" alt="Company Logo">
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav no-search">
+        <li class="nav-item"><a href="{% url 'index' %}">Home</a></li>
+        <li class="nav-item"><a href="{% url 'search' %}">Search</a></li>
+        <li class="nav-item"><a href="{% url 'app'%}">Predict</a></li>
+        <li class="nav-item"><a href="{% url 'faq'%}">Faq</a></li>
+        
+
+      </ul>
+    </nav>
+  </div>
+  <!-- This is for nav bar-->
+  <!-- THis is for search bar -->
+  <div id="image">
+    <div class="wrapper">
+      <div class="container">
+        <form role="search" method="get" class="search-form form" action="">
+          <label>
+            <span class="screen-reader-text">Search for...</span>
+            <input type="search" class="search-field" placeholder="Type something..." value="" name="s" title="" />
+          </label>
+          <input type="submit" class="search-submit button" value="&#xf002" />
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- THis is for search bar -->
+  <hr style="border:2px solid;color:rgb(17, 69, 182) ;background-color: rgb(17, 69, 182);margin-top: 70px;">
+  <!-- this is for card-->
+  <p style="font-size: 40px;color: black;">look here for the house</p>
+  <div class="container">
+
+    <div class="card">
+      <div class="card-top background-purple">
+        <div class="carousel-container">
+          <div class="navigation">
+            <div class="prev nav-btn">
+              </div>
+                <div class="next nav-btn">></div>
+            </div>
+            <div class="carousel">
+              <div class="item main">
+                <img src="https://wallpapercave.com/wp/wp3473585.jpg" alt="mountain" />
+                <div class="caption">Image 1</div>
+              </div>
+              <div class="item">
+                <img src="https://i.pinimg.com/originals/cd/7b/5c/cd7b5c8d4687b5c98a445127926a56e2.jpg" alt="beach" />
+                <div class="caption">Image 2</div>
+              </div>
+              <div class="item">
+                <img src="https://i.ytimg.com/vi/-3N6fCzgXuc/maxresdefault.jpg" alt="cityscape" />
+                <div class="caption">Image 3</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="options">
+          <ul class="option-list">
+            <li class="option">
+              <span class="number">1400</span>
+              <span class="cost">squarefeat</span>
+            </li>
+            <li class="option ">
+
+              <span class="number">3</span>
+              <span class="cost">Bedrooms</span>
+
+            </li>
+            <li class="option">
+              <span class="number">2</span>
+              <span class="cost">Bathroom</span>
+            </li>
+          </ul>
+        </div>
+        <div class="cta">
+          <p>location:electronic city</p>
+          <a class="btn btn-purple" href="{% url 'pay'%}">PAY</a>
+          <br>
+          <a class="btn btn-purple"></a>
+          
+
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top background-red">
+          <div class="carousel-container">
+            <div class="navigation">
+              <div class="prev nav-btn">
+                </div>
+                  <div class="next nav-btn">></div>
+              </div>
+              <div class="carousel">
+                <div class="item main">
+                  <img src="https://wallpapercave.com/wp/wp3473585.jpg" alt="mountain" />
+                  <div class="caption">Image 1</div>
+                </div>
+                <div class="item">
+                  <img src="https://i.pinimg.com/originals/cd/7b/5c/cd7b5c8d4687b5c98a445127926a56e2.jpg" alt="beach" />
+                  <div class="caption">Image 2</div>
+                </div>
+                <div class="item">
+                  <img src="https://i.ytimg.com/vi/-3N6fCzgXuc/maxresdefault.jpg" alt="cityscape" />
+                  <div class="caption">Image 3</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="options">
+            <ul class="option-list">
+              <li class="option">
+                <span class="number">1500</span>
+
+                <span class="cost">squarefeat</span>
+              </li>
+              <li class="option">
+
+                <span class="number">3</span>
+                <span class="cost">Bedrooms</span>
+
+              </li>
+              <li class="option">
+                <span class="number">3</span>
+
+                <span class="cost">Bathrooms</span>
+              </li>
+            </ul>
+          </div>
+          <div class="cta">
+            <p>location:jain nagar</p>
+            <a class="btn btn-red" href="{% url 'pay'%}">PAY</a>
+            <br>
+            <a class="btn btn-red"></a>
+            
+
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top background-teal">
+            <div class="carousel-container">
+              <div class="navigation">
+                <div class="prev nav-btn">
+                  </div>
+                    <div class="next nav-btn">></div>
+                </div>
+                <div class="carousel">
+                  <div class="item main">
+                    <img src="https://wallpapercave.com/wp/wp3473585.jpg" alt="mountain" />
+                    <div class="caption">Image 1</div>
+                  </div>
+                  <div class="item">
+                    <img src="https://i.pinimg.com/originals/cd/7b/5c/cd7b5c8d4687b5c98a445127926a56e2.jpg"
+                      alt="beach" />
+                    <div class="caption">Image 2</div>
+                  </div>
+                  <div class="item">
+                    <img src="https://i.ytimg.com/vi/-3N6fCzgXuc/maxresdefault.jpg" alt="cityscape" />
+                    <div class="caption">Image 3</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="options">
+              <ul class="option-list">
+                <li class="option">
+                  <span class="number">1575</span>
+
+                  <span class="cost">squarefeat</span>
+                </li>
+                <li class="option ">
+
+                  <span class="number">4</span>
+
+                  <span class="cost">Bedrooms</span>
+
+                </li>
+                <li class="option">
+                  <span class="number">3</span>
+
+                  <span class="cost">Bathrooms</span>
+                </li>
+              </ul>
+            </div>
+            <div class="cta">
+              <p> location:Koramangala</p>
+              <a class="btn btn-teal"href="{% url 'pay'%}">PAY</a>
+              <br>
+              <a  class="btn btn-teal"></a>
+             
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- this is for card-->
+        <!-- this is for footer-->
+        <div class="foo">
+          <footer class="footer">
+            <div class="waves">
+              <div class="wave" id="wave1"></div>
+              <div class="wave" id="wave2"></div>
+              <div class="wave" id="wave3"></div>
+              <div class="wave" id="wave4"></div>
+            </div>
+            <ul class="social-icon">
+              <li class="social-icon__item"><a class="social-icon__link" href="#">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a></li>
+              <li class="social-icon__item"><a class="social-icon__link" href="#">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a></li>
+              <li class="social-icon__item"><a class="social-icon__link" href="#">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a></li>
+              <li class="social-icon__item"><a class="social-icon__link" href="#">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a></li>
+            </ul>
+            <ul class="menu">
+              <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+              <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+              <li class="menu__item"><a class="menu__link" href="#">Search</a></li>
+              <li class="menu__item"><a class="menu__link" href="#">privacy and policy</a></li>
+              <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+
+            </ul>
+            <p>&copy;2021 RENTURHOUSE | All Rights Reserved</p>
+          </footer>
+        </div>
+        <!-- this is for footer-->
+        <script>
+          const prev = document.querySelector('.prev');
+          const next = document.querySelector('.next');
+          const images = document.querySelector('.carousel').children;
+          const totalImages = images.length;
+          let index = 0;
+
+          prev.addEventListener('click', () => {
+            nextImage('next');
+          })
+
+          next.addEventListener('click', () => {
+            nextImage('prev');
+          })
+
+          function nextImage(direction) {
+            if (direction == 'next') {
+              index++;
+              if (index == totalImages) {
+                index = 0;
+              }
+            } else {
+              if (index == 0) {
+                index = totalImages - 1;
+              } else {
+                index--;
+              }
+            }
+
+            for (let i = 0; i < images.length; i++) {
+              images[i].classList.remove('main');
+            }
+            images[index].classList.add('main');
+          }
+
+          $("#search-icon").click(function () {
+            $(".nav").toggleClass("search");
+            $(".nav").toggleClass("no-search");
+            $(".search-input").toggleClass("search-active");
+          });
+
+          $('.menu-toggle').click(function () {
+            $(".nav").toggleClass("mobile-nav");
+            $(this).toggleClass("is-active");
+          });
+        </script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+        </body>
+
+</html>

@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    
+    <link rel="stylesheet" href="{ % static'css/about.css'%}">
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
+    <link rel="stylesheet" href="{% static 'css/why.css'%}">
+    <link rel="stylesheet" href="{% static 'css/footer.css'%}">
+</head>
+<body>
+     <!-- This is for nav bar-->
+     <div class="page-wrapper">
+        <div class="nav-wrapper">
+            <div class="grad-bar"></div>
+            <nav class="navbar">
+                <img src="{% static 'ima/logo5.png' %}" alt="Company Logo">
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav no-search">
+                    <li class="nav-item"><a href="{%url 'index' %}">Home</a></li>
+                    <li class="nav-item"><a href="{% url 'search'%}">Search</a></li>
+                    <li class="nav-item"><a href="{% url 'app' %}">Predict</a></li>
+                    <li class="nav-item"><a href="{% url 'faq' %}">Faq</a></li>
+                    {% if user.is_authenticated %}
+                    <p>hello {{request.user.username}}</p>
+                    <li class="nav-item"><a href="accounts/logout/"class="btn btn-warning">Logout</a></li>
+                    {% else %}
+                    <li class="nav=item"><a href="accounts/login/"class="btn btn-warning">Login / Signup</a></li>
+                    {% endif %}
+                    
+
+                </ul>
+            </nav>
+        </div>
+
+        <!-- This is for nav bar-->
+        <!--about us-->
+        <div class="section">
+            <div class="container">
+                <div class="content-section">
+                    <div class="title">
+                        <h1>About Us</h1>
+                    </div>
+                    <div class="content">
+                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.</p>
+                        <div class="button">
+                            <a href="">Read More</a>
+                        </div>
+                    </div>
+                    <div class="social">
+                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="image-section">
+                    <img src="{% static 'images/image2.jpg'%}">
+                </div>
+            </div>
+        </div>
+        <!--about us-->
+        <!--this is for what we do-->
+        <div class="section">
+            <div class="container">
+                <div class="content-section">
+                    <div class="title">
+                        <h1>why us</h1>
+                    </div>
+                    <div class="content">
+                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.</p>
+                        <div class="button">
+                            <a href="">Read More</a>
+                        </div>
+                    </div>
+                    <div class="social">
+                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="image-section">
+                    <img src="{%static 'images/image1.jpeg'%}">
+                </div>
+            </div>
+        </div>
+
+        <!--this is for what we do-->
+        <!-- this is for contact form-->
+        <div class="con">
+            <div class="contact">
+                <div class="contact-box">
+                    <div class="left"></div>
+                    <div class="right">
+                        <h2>Contact Us</h2>
+                        <input type="text" class="field" placeholder="Your Name">
+                        <input type="text" class="field" placeholder="Your Email">
+                        <input type="text" class="field" placeholder="Phone">
+                        <textarea placeholder="Message" class="field"></textarea>
+                        <button class="btn">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- this is for contact form-->
+        <!-- this is for footer-->
+        <div class="foo">
+            <footer class="footer">
+                <div class="waves">
+                    <div class="wave" id="wave1"></div>
+                    <div class="wave" id="wave2"></div>
+                    <div class="wave" id="wave3"></div>
+                    <div class="wave" id="wave4"></div>
+                </div>
+                <ul class="social-icon">
+                    <li class="social-icon__item"><a class="social-icon__link" href="#">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a></li>
+                    <li class="social-icon__item"><a class="social-icon__link" href="#">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a></li>
+                    <li class="social-icon__item"><a class="social-icon__link" href="#">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a></li>
+                    <li class="social-icon__item"><a class="social-icon__link" href="#">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a></li>
+                </ul>
+                <ul class="menu">
+                    <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#">Search</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#">privacy and policy</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+
+                </ul>
+                <p>&copy;2021 RENTURHOUSE | All Rights Reserved</p>
+            </footer>
+        </div>
+        <!-- this is for footer-->  
+</body>
+</html>

@@ -1,0 +1,227 @@
+.container {
+    margin-top: 10px;
+    margin-left:200px;
+    display: flex;
+    flex-wrap:nowrap;
+    font-family: 'Open Sans', sans-serif;
+}
+.card {
+    
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px #ccc;
+    width: 350px;
+    text-align: center;
+    margin-left: 2em;
+    margin-top: 2em;
+}
+.card a {
+    text-decoration: none;
+    color: black;
+}
+.card .card-top {
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 1.5em;
+    min-height: 200px;
+    padding-bottom: 0.5em;
+}
+.card .card-top span {
+    color: #fafafa;
+    font-size: 0.6em;
+    padding-top: 1em;
+}
+.card .background-purple {
+    background: #5f23ae;
+    background: linear-gradient(45deg, rgba(95, 35, 174, 1) 0%, rgba(132, 64, 190, 1) 50%, rgba(200, 109, 215, 1) 100%);
+}
+.card .background-red {
+    background: #af1310;
+    background: linear-gradient(45deg, rgba(175, 19, 16, 1) 0%, rgba(222, 58, 55, 1) 50%, rgba(255, 68, 65, 1) 100%);
+}
+.card .background-teal {
+    background: #1b8b77;
+    background: linear-gradient(45deg, rgba(27, 139, 119, 1) 0%, rgba(56, 189, 166, 1) 50%, rgba(96, 230, 192, 1) 100%);
+}
+.card h3 {
+    font-size: 28px;
+    font-weight: 400;
+    margin: 0;
+    padding: 2rem 0 0;
+}
+.card i {
+    font-size: 56px;
+    padding: 1.25rem 0 0;
+}
+.card .card-tagline {
+    font-size: 20px;
+    margin: 0;
+    padding: 1.25rem 0 0;
+}
+.card .card-subtag {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 12px;
+}
+.card span {
+    display: block;
+    width: 100%;
+}
+.card .option-list {
+    background-color: #f4f4f4;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    padding: 0em 0;
+    margin: 0;
+    width: 100%;
+}
+.card .option-list .option {
+    border: solid 2px rgba(246, 246, 249, 0);
+    padding: 1em;
+    padding-bottom: 0.5em;
+    position: relative;
+    width: calc(1/3 * 100%);
+}
+.card .option-list .highlight-blue {
+    border: 2px solid #3094f7;
+    box-shadow: 0px 0px 10px #3094f7;
+    margin: 0;
+}
+.card .option-list .highlight-blue span {
+    color: #3094f7;
+}
+.card .option-list .highlight-blue .savings {
+    color: #7abafa;
+}
+.card .option-list .highlight-blue .pill {
+    background-color: #3094f7;
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px #3094f7;
+    color: #fff;
+    display: block;
+    line-height: 1.5em;
+    font-size: 0.75em;
+    position: absolute;
+    top: -10px;
+    margin: 0 auto;
+    width: 75%;
+}
+.card .option-list .highlight-red {
+    border: 2px solid #f73030;
+    box-shadow: 0px 0px 10px #f73030;
+    margin: 0;
+}
+.card .option-list .highlight-red span {
+    color: #f73030;
+}
+.card .option-list .highlight-red .savings {
+    color: #fa7a7a;
+}
+.card .option-list .highlight-red .pill {
+    background-color: #f73030;
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px #f73030;
+    color: #fff;
+    display: block;
+    line-height: 1.5em;
+    font-size: 0.75em;
+    position: absolute;
+    top: -10px;
+    margin: 0 auto;
+    width: 75%;
+}
+.card .option-list .highlight-green {
+    border: 2px solid #60e6c0;
+    box-shadow: 0px 0px 10px #60e6c0;
+    margin: 0;
+}
+.card .option-list .highlight-green span {
+    color: #60e6c0;
+}
+.card .option-list .highlight-green .savings {
+    color: #a2f0da;
+}
+.card .option-list .highlight-green .pill {
+    background-color: #60e6c0;
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px #60e6c0;
+    color: #fff;
+    display: block;
+    line-height: 1.5em;
+    font-size: 0.75em;
+    position: absolute;
+    top: -10px;
+    margin: 0 auto;
+    width: 75%;
+}
+.card .option-list .popular {
+    display: none;
+}
+.card .option-list .number {
+    font-size: 2em;
+}
+.card .option-list .time-frame {
+    font-size: 0.75em;
+}
+.card .option-list .cost {
+    font-size: 0.75em;
+    font-weight: 800;
+}
+.card .option-list .savings {
+    font-size: 0.75em;
+    padding: 0.5em 0 0;
+}
+.card .cta {
+    padding: 1em 0;
+}
+.card .cta .btn {
+    border-radius: 25px;
+    box-shadow: 0px 0px 25px #c6c6c6;
+    color: #fff;
+    display: block;
+    margin: 0 auto;
+    padding: 10px 0;
+    text-decoration: none;
+    width: 75%;
+}
+.card .cta .btn-purple {
+    background: linear-gradient(90deg, #5f23ae 0%, #8440be 31%, #c86dd7 100%);
+    background-size: 150% auto;
+    background-position: 31% 0;
+    transition: background-position 0.4s;
+}
+.card .cta .btn-purple:hover {
+    background-position: 100% 0;
+}
+.card .cta .btn-red {
+    background: linear-gradient(90deg, #af1310 0%, #de3a37 50%, #ff4441 100%);
+    background-size: 150% auto;
+    background-position: 31% 0;
+    transition: background-position 0.4s;
+}
+.card .cta .btn-red:hover {
+    background-position: 100% 0;
+}
+.card .cta .btn-teal {
+    background: linear-gradient(90deg, #1b8b77 0%, #38bda6 50%, #60e6c0 100%);
+    background-size: 150% auto;
+    background-position: 31% 0;
+    transition: background-position 0.4s;
+}
+.card .cta .btn-teal:hover {
+    background-position: 100% 0;
+}
+.card .cta .decline {
+    color: #c9c9c9;
+    font-weight: 700;
+    display: block;
+    padding: 1em 0 0;
+    margin: auto;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    width: 40%;
+}
+.card .cta .decline:hover {
+    color: #999;
+}

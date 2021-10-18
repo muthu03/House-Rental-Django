@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Banglore Home Price Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'style.css'%}">
+	<link rel="stylesheet" href="{% static 'css/nav.css'%}">
+	
+</head>
+
+<body>
+	<!-- This is for nav bar-->
+    <div class="page-wrapper">
+        <div class="nav-wrapper">
+            <div class="grad-bar"></div>
+            <nav class="navbar">
+                <img src="{% static 'ima/logo5.png' %}" alt="Company Logo">
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav no-search">
+                    <li class="nav-item"><a href="{%url 'index' %}">Home</a></li>
+                    <li class="nav-item"><a href="{% url 'search'%}">Search</a></li>
+                    <li class="nav-item"><a href="{% url 'app'%}">Predict</a></li>
+                    <li class="nav-item"><a href="{%url 'faq'%}">Faq</a></li>
+                
+
+                </ul>
+            </nav>
+        </div>
+
+        <!-- This is for nav bar-->
+
+<form action=" {% url 'result' %}">
+	{% csrf_token %}
+	area:<input type="text" required name="Squareft">
+	BHK:<input type="text" required name="uiBHK">
+	bathrooms:<input type="text" required name="uiBathrooms">
+	location:<input type="text" required name="location">
+	<input type="submit" name="predict" value="submit">
+</form>
+
+
+</body>
+<!-- <style type="text/css">
+	input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+} -->
+
+</style>
+
+</html>
