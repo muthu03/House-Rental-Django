@@ -13,4 +13,5 @@ urlpatterns = [
     path('faq/', views.faq, name='faq'),
     path('search/', views.search, name='search'),
     path('pay/', views.pay, name='pay'),
+    path('forms/', views.forms, name='forms'),
 ]

@@ -1,0 +1,91 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css2/forms.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
+</head>
+<body>
+  <!-- This is for nav bar-->
+  <div class="page-wrapper">
+    <div class="nav-wrapper">
+        <div class="grad-bar"></div>
+        <nav class="navbar">
+            <img src="{% static 'ima/logo5.png' %}" alt="Company Logo">
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav no-search">
+                <li class="nav-item"><a href="{%url 'index' %}">Home</a></li>
+                <li class="nav-item"><a href="{% url 'search'%}">Search</a></li>
+                <li class="nav-item"><a href="{% url 'app' %}">Predict</a></li>
+                <li class="nav-item"><a href="{% url 'faq' %}">Faq</a></li>
+                <li class="nav-item"><a href="{% url 'forms' %}">Forms</a></li>
+              
+                
+
+            </ul>
+        </nav>
+    </div>
+
+    <!-- This is for nav bar-->
+    <div class="form_wrapper">
+        <div class="form_container">
+          <div class="title_container">
+            <h2>Rentee Form</h2>
+          </div>
+          <div class="row clearfix">
+            <div class="">
+              <form>
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                  <input type="email" name="email" placeholder="Email" required />
+                </div>
+               
+                <div class="row clearfix">
+                  <div class="col_half">
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                      <input type="text" name="name" placeholder="First Name" />
+                    </div>
+                  </div>
+                  <div class="col_half">
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                      <input type="text" name="name" placeholder="Last Name" required />
+                    </div>
+                  </div>
+                </div>
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                  <input type="text" name="number" placeholder="mobile number" required />
+                </div>
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                  <input type="text" name="address" placeholder="address" required></i> 
+                </div>
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                  <input type="text" name="gender" placeholder="gender" required></i> 
+                </div>
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                  <input type="text" name="bedrooms" placeholder="bedrooms" required></i> 
+                </div>
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                  <input type="text" name="bathrooms" placeholder="bathrooms" required></i> 
+                </div>
+                      
+                      <di class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                        <lable for="image">upload you house image</lable>
+                        <input type="file" id="image" name="image" placeholder="image"  />
+                      </div>
+                      <p></p>
+                      
+                <input class="button" type="submit" value="Register" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

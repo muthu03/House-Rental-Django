@@ -30,6 +30,7 @@
                     <li class="nav-item"><a href="{% url 'search'%}">Search</a></li>
                     <li class="nav-item"><a href="{% url 'app' %}">Predict</a></li>
                     <li class="nav-item"><a href="{% url 'faq' %}">Faq</a></li>
+                    <li class="nav-item"><a href="{% url 'forms' %}">Forms</a></li>
                     {% if user.is_authenticated %}
                     <p>hello {{request.user.username}}</p>
                     <li class="nav-item"><a href="accounts/logout/"class="btn btn-warning">Logout</a></li>
@@ -51,14 +52,15 @@
                         <h1>About Us</h1>
                     </div>
                     <div class="content">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat.</p>
-                        <div class="button">
-                            <a href="">Read More</a>
-                        </div>
+                        <h3>Welcome to RENTURHOUSE.com</h3>
+                        <p>
+                            This is a disruptive renting platform that makes it possible to rent a house without paying any brokerage
+
+                            RENTURHOUSE was started because all of us believed that paying hefty brokerage can not be the only option to find a new home
+                            . As tenants, we have been paying these brokerages year on year without seeing any advantage of the broker. The only reason he 
+                            existed was that there was a huge information asymmetry in the market. RENTURHOUSE is a platform that removes this information 
+                            asymmetry and provides a marketplace for free exchange of this information that used to cost 1-2 months of rent as brokerage. 
+                        </p>
                     </div>
                     <div class="social">
                         <a href=""><i class="fab fa-facebook-f"></i></a>
@@ -80,23 +82,18 @@
                         <h1>why us</h1>
                     </div>
                     <div class="content">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat.</p>
-                        <div class="button">
-                            <a href="">Read More</a>
-                        </div>
+                        
+                        <p>we provide you verified and securied payment gateway also we provide 
+                            detailed information about houses.best in class legal documentation at attractive prices.
+                            get delighted with super fast documentation at the convenience of your home.we verified tenant
+                            who gives you rent on time and the will house maintanence.
+                        </p>
+                       
                     </div>
-                    <div class="social">
-                        <a href=""><i class="fab fa-facebook-f"></i></a>
-                        <a href=""><i class="fab fa-twitter"></i></a>
-                        <a href=""><i class="fab fa-instagram"></i></a>
-                    </div>
+                   
                 </div>
                 <div class="image-section">
-                    <img src="{%static 'images/image1.jpeg'%}">
+                    <img src="{%static 'images/image4.jpeg'%}">
                 </div>
             </div>
         </div>

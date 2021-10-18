@@ -6,6 +6,11 @@
 	{% load static %}
 	<link rel="stylesheet" href="{% static 'style.css'%}">
 	<link rel="stylesheet" href="{% static 'css/nav.css'%}">
+    <style>
+        .body{
+            background:url('/static/images/image1.css') no-repeat;
+        }
+    </style>
 	
 </head>
 
@@ -26,6 +31,7 @@
                     <li class="nav-item"><a href="{% url 'search'%}">Search</a></li>
                     <li class="nav-item"><a href="{% url 'app'%}">Predict</a></li>
                     <li class="nav-item"><a href="{%url 'faq'%}">Faq</a></li>
+                    <li class="nav-item"><a href="{% url 'forms' %}">Forms</a></li>
                 
 
                 </ul>
